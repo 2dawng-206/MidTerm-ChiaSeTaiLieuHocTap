@@ -20,14 +20,10 @@ app.use('/api/subjects', subjectRoutes);
 
 
 
-mongoose
-    .connect(process.env.MONGO_URI) // Dùng biến từ file .env
-    .then(() => {
-        console.log('Database connected successfully!');
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        });
-    })
-    .catch(err => {
-        console.error('Database connection error:', err);
-    });
+mongoose.connect("mongodb+srv://thandonghzlol1_db_user:123123123@cluster0.nt3k99o.mongodb.net/sharing-db?retryWrites=true&w=majority")
+.then(() => {
+    console.log('Database connected successfully!');
+})
+.catch(err => {
+    console.error('Database connection error:', err);
+});
